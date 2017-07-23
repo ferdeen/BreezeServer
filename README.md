@@ -45,6 +45,15 @@ As this is alpha software, the tumbler is currently configured to only operate o
 
 ## How to Run
 
+#### Supported Operating Systems
+
+Breeze Server has been tested by our team on the following systems and OS specific help is available below:
+
+  1. [Windows](#windows)
+  2. [Mac OS X](#macos)
+  3. [Ubuntu](#ubuntu)
+  4. [Raspbian](#raspbian)
+
 #### Prerequisites:
 
 As a user, you will need:
@@ -170,6 +179,19 @@ At this stage the client is hosted  in [NTumbleBit](https://github.com/ntumblebi
 Breeze.BreezeClient is not implemented yet. Please view the [documentation](https://github.com/ntumblebit/ntumblebit/wiki/How-to-Run#the-client) for NTumbleBit Client
 
 ###### The registration transaction
+
+## Operating System Support
+
+#### <a name="windows"/>Windows
+
+#### <a name="macos"/>Mac OSX
+
+#### <a name="ubuntu"/>Ubuntu
+
+#### <a name="raspbian"/>Raspbian
+
+
+details
 
 ###### FAQ
 Please read the [FAQ](https://github.com/BreezeHub/BreezeServer/wiki/FAQ) if you are struggling.
