@@ -85,6 +85,22 @@ namespace Breeze.BreezeServer
             try {
                 stratisHelper = new RPCHelper(network);
                 stratisRpc = stratisHelper.GetClient(config.RpcUser, config.RpcPassword, config.RpcUrl);
+                try
+                {
+                    // Try to unlock the wallet for 60s with the configured passphrase
+                    // Until WalletPassPhrase is merged in NBitcoin/NStratis
+                    var parameters = new List<object>();
+                    parameters.Add(config.TumblerWalletPassphrase);
+                    parameters.Add(60);
+                    
+                    stratisRpc.SendCommand("walletpassphrase", parameters);
+                }
+                catch (Exception e)
+                {
+                    // In the case that the wallet is unencrypted, this will throw an err
+                    // and that's ok. If invalid passphrase then DumpPrivKey will err & exit.
+                    Console.WriteLine(e);
+                }
                 privateKeyEcdsa = stratisRpc.DumpPrivKey(BitcoinAddress.Create(config.TumblerEcdsaKeyAddress));
             }
             catch (Exception e) {
@@ -171,6 +187,12 @@ namespace Breeze.BreezeServer
                 throw new Exception("ERROR: No outputs in registration transaction, cannot proceed");
 
             return sendTx;
+        }
+
+        private void UnlockWallet(walletPassphrase)
+        {
+            int WALLETPASSPHRASE_TIMEOUT = 60;
+
         }
     }
 }
