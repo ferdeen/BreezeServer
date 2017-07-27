@@ -93,7 +93,7 @@ namespace Breeze.BreezeServer
                     parameters.Add(config.TumblerWalletPassphrase);
                     parameters.Add(60);
                     
-                    stratisRpc.SendCommand("walletpassphrase", parameters);
+                    stratisRpc.SendCommand("walletpassphrase", parameters.ToArray());
                 }
                 catch (Exception e)
                 {
