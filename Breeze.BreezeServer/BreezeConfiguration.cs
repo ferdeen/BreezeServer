@@ -27,6 +27,7 @@ namespace Breeze.BreezeServer
         public string TumblerApiBaseUrl { get; set; }
         public string TumblerRsaKeyPath { get; set; }
         public string TumblerEcdsaKeyAddress { get; set; }
+        public string TumblerWalletPassphrase { get; set; }
 
         public Money TxOutputValueSetting { get; set; }
         public Money TxFeeValueSetting { get; set; }
@@ -53,6 +54,7 @@ namespace Breeze.BreezeServer
                     builder.AppendLine("#tumbler.url=");
                     builder.AppendLine("#tumbler.rsakeypath=");
                     builder.AppendLine("#tumbler.ecdsakeyaddress=");
+                    builder.AppendLine("#tumbler.walletpassphrase=");
 
                     File.WriteAllText(configPath, builder.ToString());
 
@@ -118,6 +120,8 @@ namespace Breeze.BreezeServer
                 TumblerApiBaseUrl = configFile.GetOrDefault<string>("tumbler.url", null);
                 TumblerRsaKeyPath = configFile.GetOrDefault<string>("tumbler.rsakeypath", null);
                 TumblerEcdsaKeyAddress = configFile.GetOrDefault<string>("tumbler.ecdsakeyaddress", null);
+
+                TumblerWalletPassphrase = configFile.GetOrDefault<string>("tumbler.walletpassphrase", null);
 
                 TxOutputValueSetting = new Money(configFile.GetOrDefault<int>("breeze.regtxoutputvalue", 1000), MoneyUnit.Satoshi);
                 TxFeeValueSetting = new Money(configFile.GetOrDefault<int>("breeze.regtxfeevalue", 10000), MoneyUnit.Satoshi);
