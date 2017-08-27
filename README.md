@@ -87,6 +87,8 @@ We currently recommend StratisX to run stratisd v2.0.0.3.
 
 Packages for Windows and Mac OS X can be found [here](https://github.com/stratisproject/stratisX/releases/tag/v2.0.0.3).
 
+##### Linux
+
 Here are some pointers for ubuntu:
 ```
 sudo apt-get install libminiupnpc-dev libdb++-dev libdb-dev libcrypto++-dev libqrencode-dev libboost-all-dev build-essential libboost-system-dev libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libssl-dev libdb++-dev libssl-dev ufw git                                                                                                        sudo add-apt-repository -y ppa:bitcoin/bitcoin                                                                                                             
@@ -99,7 +101,7 @@ make -f makefile.unix # This will error if you don't have all dependencies liste
 cp -a stratisd ~/bin   
 ```
 
-##### Step 3: Configure & run StratisX on testnet
+##### Step 3: Configure & run StratisD on testnet
 
 Create/edit your stratis.conf:
 ```
