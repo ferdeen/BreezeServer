@@ -59,7 +59,7 @@ More information about installing .NET Core on your system can be found [here](h
 
 #### Install Stratis X (and configure StratisX node to use the stratis testnet blockchain)
 
-##### Step 1: Create a user for running stratisd
+##### Step 1: Create a user for running stratisd (optional)
 This step is optional, but for better security and resource separation we suggest you create a separate user just for running stratisd. We will also use the ~/bin directory to keep locally installed files (others might want to use /usr/local/bin instead). We will download source code files to the ~/src directory. (Example here is for linux and was tested on Ubuntu).
 
 Enter the following at your terminal:
