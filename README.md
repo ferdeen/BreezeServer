@@ -57,7 +57,25 @@ More information about installing .NET Core on your system can be found [here](h
   - [Visual Studio Code](https://code.visualstudio.com/) with [C# Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) (cross platform), or
   - [Visual Studio 2017](https://www.visualstudio.com/downloads/) (Windows and Mac OS)
 
-#### Install Stratis D (and configure StratisD node to use the stratis testnet blockchain)
+#### Install Stratis X (and configure StratisX to use the stratis testnet blockchain)
+
+##### Windows and Mac
+
+Packages for Windows and Mac OS X can be found [here](https://github.com/stratisproject/stratisX/releases/tag/v2.0.0.3).
+
+Run the installed *stratisqt* in testnet mode and wlet it sync the testnet blockchain transaction.
+
+```
+stratisqt -testnet
+```
+
+This will create a folder on your computer named Stratis in the following location:
+
+```
+%AppData%\Roaming\Stratis
+```
+
+##### Linux
 
 ##### Step 1: Create a user for running stratisd (optional)
 This step is optional, but for better security and resource separation we suggest you create a separate user just for running stratisd. We will also use the ~/bin directory to keep locally installed files (others might want to use /usr/local/bin instead). We will download source code files to the ~/src directory. (Example here is for linux and was tested on Ubuntu).
@@ -82,12 +100,6 @@ exit
 
 ##### Step 2: Download StratisD
 We currently recommend StratisX to run stratisd v2.0.0.3.
-
-##### Windows and Mac
-
-Packages for Windows and Mac OS X can be found [here](https://github.com/stratisproject/stratisX/releases/tag/v2.0.0.3).
-
-##### Linux
 
 Here are some pointers for ubuntu:
 ```
@@ -145,8 +157,6 @@ Allow some time to pass so stratisd connects to the network and starts downloadi
 ```
 stratisd getinfo
 ```
-
-Later versions of Bitcoin Core should work as well.
 
 #### Configuring Bitcoin Core for testnet
 [Download](https://bitcoin.org/bin/bitcoin-core-0.13.1/) Bitcoin Core 0.13.1
