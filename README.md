@@ -211,13 +211,6 @@ Place the file in the relevant directory based on your system:
 Finally, boot up bitcoind or bitcoin-qt, let it sync with the network, and send it some coin.
 
 
-
-#### Installing .NET Core
-
-BreezeServer is built upon .NET Core.
-
-You will need to install it on your system following [these instructions](https://www.microsoft.com/net/core).
-
 #### Getting the Code
 
 Navigate to where you would like to save the code in your shell and then:
@@ -226,14 +219,13 @@ git clone git@github.com:BreezeHub/BreezeServer.git --recursive
 ```
 The `--recursive` command is vital because BreezeServer relies on git submodules.
 
-#### `dotnet restore`
+In the newly created Breeze.Server folder run the following command:
 
-According to the documentation:
-> The `dotnet restore` command uses NuGet to restore dependencies as well as project-specific tools that are specified in the project file. By default, the restoration of dependencies and tools are performed in parallel.
+```dotnet restore```
 
-run `dotnet restore` inside the newly created BreezeServer directory.
+The `dotnet restore` command uses NuGet to restore dependencies as well as project-specific tools that are specified in the project file.
 
-#### Running Tests
+#### Running Tests (optional)
 
 ```
 cd Breeze.BreezeServer.Tests/
