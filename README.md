@@ -74,8 +74,32 @@ This will create a folder on your computer named Stratis in the following locati
 ```
 %AppData%\Roaming\Stratis
 ```
+Create a ```stratis.config``` file in this folder and set it up a follows:
+
+```
+# ~/.stratis/stratis.conf
+
+# Run on the test network instead of the real bitcoin network.
+testnet=1
+
+# reindex the blockchain
+txindex=1
+
+#run in the background
+daemon=1
+
+# RPC user and password. We don't yet support cookie authentication
+rpcuser=stratisuser
+rpcpassword=stratispassword
+
+# Optional: pruning can reduce the disk usage
+prune=2000
+```
+Run again stratisqt - you now have a sync'd and setup wallet.  You can send it some testcoins.
 
 ##### Linux
+
+On linux we currently recommend you install and run stratisd v2.0.0.3.
 
 ##### Step 1: Create a user for running stratisd (optional)
 This step is optional, but for better security and resource separation we suggest you create a separate user just for running stratisd. We will also use the ~/bin directory to keep locally installed files (others might want to use /usr/local/bin instead). We will download source code files to the ~/src directory. (Example here is for linux and was tested on Ubuntu).
@@ -99,7 +123,6 @@ exit
 ```
 
 ##### Step 2: Download StratisD
-We currently recommend StratisX to run stratisd v2.0.0.3.
 
 Here are some pointers for ubuntu:
 ```
