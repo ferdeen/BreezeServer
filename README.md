@@ -52,12 +52,10 @@ As a user, you will need:
 
 #### Install .Net Core SDK:
 
+More information about installing .NET Core on your system can be found [here](https://www.microsoft.com/net/core).  If you are a developer or want to browse the code, you may like to install one of the following:
 
-More information about installing .NET Core on your system can be found [here](https://www.microsoft.com/net/core).
-
-If you are a developer or want to browse the code, you additionally require:
   - [Visual Studio Code](https://code.visualstudio.com/) with [C# Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) (cross platform)
-  - [Visual Studio 2017](https://www.visualstudio.com/downloads/) (Windows and Mac OS only)
+  - [Visual Studio 2017](https://www.visualstudio.com/downloads/) (Windows and Mac OS)
 
 #### Install Stratis X:
 
