@@ -200,6 +200,7 @@ rpcpassword=bitcoinpassword
 ```
 
 Place the file in the relevant directory based on your system:
+
 | OS | bitcoin.conf parent directory |
 | --- | --- |
 | Linux                   | /home/\<username\>/.bitcoin/                                     |
