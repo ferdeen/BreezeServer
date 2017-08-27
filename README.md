@@ -47,7 +47,7 @@ As this is alpha software, the tumbler is currently configured to only operate o
 
 As a user, you will need:
   - [.NET Core 2.0 SDK](https://www.microsoft.com/net/download/core#/sdk) which is available for Windows, Mac OS and several Linux distributions (RHEL, Ubuntu, Debian, Fedora, CentOS, SUSE).
-  - [StratisX](https://github.com/stratisproject/StratisX) fully synced, rpc enabled
+  - [StratisD](https://github.com/stratisproject/StratisX) fully synced, rpc enabled
   - [Bitcoin Core 0.13.1](https://bitcoin.org/bin/bitcoin-core-0.13.1/) or later.  Fully sync'd, rpc enabled.
 
 #### Install .Net Core SDK:
@@ -57,7 +57,7 @@ More information about installing .NET Core on your system can be found [here](h
   - [Visual Studio Code](https://code.visualstudio.com/) with [C# Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) (cross platform), or
   - [Visual Studio 2017](https://www.visualstudio.com/downloads/) (Windows and Mac OS)
 
-#### Install Stratis X (and configure StratisX node to use the stratis testnet blockchain)
+#### Install Stratis D (and configure StratisD node to use the stratis testnet blockchain)
 
 ##### Step 1: Create a user for running stratisd (optional)
 This step is optional, but for better security and resource separation we suggest you create a separate user just for running stratisd. We will also use the ~/bin directory to keep locally installed files (others might want to use /usr/local/bin instead). We will download source code files to the ~/src directory. (Example here is for linux and was tested on Ubuntu).
@@ -80,8 +80,12 @@ Leave the stratis user at your shell:
 exit
 ```
 
-##### Step 2: Download StratisX
+##### Step 2: Download StratisD
 We currently recommend StratisX to run stratisd v2.0.0.3.
+
+##### Windows and Mac
+
+Packages for Windows and Mac OS X can be found [here](https://github.com/stratisproject/stratisX/releases/tag/v2.0.0.3).
 
 Here are some pointers for ubuntu:
 ```
