@@ -46,19 +46,23 @@ As this is alpha software, the tumbler is currently configured to only operate o
 #### Prerequisites:
 
 As a user, you will need:
-  - [.NET Core 2.0 SDK](https://www.microsoft.com/net/download/core#/sdk) which is available for Windows, Mac OS and Linux.
+  - [.NET Core 2.0 SDK](https://www.microsoft.com/net/download/core#/sdk) which is available for Windows, Mac OS and several Linux distributions (RHEL, Ubuntu, Debian, Fedora, CentOS, SUSE).
   - [StratisX](https://github.com/stratisproject/StratisX) fully synced, rpc enabled
-  - [Bitcoin Core 0.13.1](https://bitcoin.org/bin/bitcoin-core-0.13.1/) fully synched, rpc enabled
+  - [Bitcoin Core 0.13.1](https://bitcoin.org/bin/bitcoin-core-0.13.1/) or later.  Fully synched, rpc enabled.
 
-You can easily install the SDK on ubuntu systems after installing the runtime by running:
-```
-sudo apt-get install dotnet-dev-1.0.4
-```
-More information about installing .NET Core on your system can be found [here](https://www.microsoft.com/net/core). Later versions of Bitcoin Core should work as well.
+#### Install .Net Core SDK:
+
+
+More information about installing .NET Core on your system can be found [here](https://www.microsoft.com/net/core).
 
 If you are a developer or want to browse the code, you additionally require:
   - [Visual Studio Code](https://code.visualstudio.com/) with [C# Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) (cross platform)
-  - [Visual Studio 2017](https://www.visualstudio.com/downloads/) (Windows only)
+  - [Visual Studio 2017](https://www.visualstudio.com/downloads/) (Windows and Mac OS only)
+
+#### Install Stratis X:
+
+
+Later versions of Bitcoin Core should work as well.
 
 #### Configuring Bitcoin Core for testnet
 [Download](https://bitcoin.org/bin/bitcoin-core-0.13.1/) Bitcoin Core 0.13.1
