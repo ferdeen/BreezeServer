@@ -54,13 +54,13 @@ As a user, you will need:
 
 More information about installing .NET Core on your system can be found [here](https://www.microsoft.com/net/core).  If you are a developer or want to browse the code, you may like to install one of the following:
 
-  - [Visual Studio Code](https://code.visualstudio.com/) with [C# Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) (cross platform)
+  - [Visual Studio Code](https://code.visualstudio.com/) with [C# Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) (cross platform), or
   - [Visual Studio 2017](https://www.visualstudio.com/downloads/) (Windows and Mac OS)
 
 #### Install Stratis X (and configure StratisX node to use the stratis testnet blockchain)
 
 ##### Step 1: Create a user for running stratisd
-This step is optional, but for better security and resource separation I suggest you create a separate user just for running stratisd. We will also use the ~/bin directory to keep locally installed files (others might want to use /usr/local/bin instead). We will download source code files to the ~/src directory.
+This step is optional, but for better security and resource separation we suggest you create a separate user just for running stratisd. We will also use the ~/bin directory to keep locally installed files (others might want to use /usr/local/bin instead). We will download source code files to the ~/src directory. (Example here is for linux and was tested on Ubuntu).
 
 Enter the following at your terminal:
 ```
