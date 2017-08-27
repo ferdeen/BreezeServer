@@ -215,7 +215,7 @@ Finally, boot up bitcoind or bitcoin-qt, let it sync with the network, and send 
 
 Navigate to where you would like to save the code in your shell and then:
 ```
-git clone git@github.com:BreezeHub/BreezeServer.git --recursive
+git clone http://www.github.com/BreezeHub/BreezeServer.git --recursive
 ```
 The `--recursive` command is vital because BreezeServer relies on git submodules.
 
