@@ -48,7 +48,7 @@ As this is alpha software, the tumbler is currently configured to only operate o
 As a user, you will need:
   - [.NET Core 2.0 SDK](https://www.microsoft.com/net/download/core#/sdk) which is available for Windows, Mac OS and several Linux distributions (RHEL, Ubuntu, Debian, Fedora, CentOS, SUSE).
   - [StratisX](https://github.com/stratisproject/StratisX) fully synced, rpc enabled
-  - [Bitcoin Core 0.13.1](https://bitcoin.org/bin/bitcoin-core-0.13.1/) or later.  Fully synched, rpc enabled.
+  - [Bitcoin Core 0.13.1](https://bitcoin.org/bin/bitcoin-core-0.13.1/) or later.  Fully sync'd, rpc enabled.
 
 #### Install .Net Core SDK:
 
@@ -57,40 +57,7 @@ More information about installing .NET Core on your system can be found [here](h
   - [Visual Studio Code](https://code.visualstudio.com/) with [C# Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) (cross platform)
   - [Visual Studio 2017](https://www.visualstudio.com/downloads/) (Windows and Mac OS)
 
-#### Install Stratis X:
-
-
-Later versions of Bitcoin Core should work as well.
-
-#### Configuring Bitcoin Core for testnet
-[Download](https://bitcoin.org/bin/bitcoin-core-0.13.1/) Bitcoin Core 0.13.1
-Create/edit your bitcoin.conf:
-```
-# ~/.bitcoin/bitcoin.conf
-# run on testnet
-testnet=1
-
-# server=1 tells Bitcoin-Qt and bitcoind to accept JSON-RPC commands
-server=1
-
-# Enable pruning to reduce storage requirements by deleting old blocks. 
-prune=2000
-
-rpcuser=bitcoinuser
-rpcpassword=bitcoinpassword
-```
-
-Place the file in the relevant directory based on your system:
-| OS | bitcoin.conf parent directory |
-| --- | --- |
-| Linux                   | /home/\<username\>/.bitcoin/                                     |
-| Mac OS                  | /Users/\<username\>/Library/Application Support/Bitcoin/         |
-| Windows Vista, 7, 8, 10 | C:\Users\\<username\>\AppData\Roaming\Bitcoin\                   |
-| Windows XP              | C:\Documents and Settings\\<username\>\Application Data\Bitcoin\ |
-
-Finally, boot up bitcoind or bitcoin-qt, let it sync with the network, and send it some coin.
-
-#### Configuring StratisX node to use the stratis testnet blockchain
+#### Install Stratis X (and configure StratisX node to use the stratis testnet blockchain)
 
 ##### Step 1: Create a user for running stratisd
 This step is optional, but for better security and resource separation I suggest you create a separate user just for running stratisd. We will also use the ~/bin directory to keep locally installed files (others might want to use /usr/local/bin instead). We will download source code files to the ~/src directory.
@@ -172,6 +139,38 @@ Allow some time to pass so stratisd connects to the network and starts downloadi
 ```
 stratisd getinfo
 ```
+
+Later versions of Bitcoin Core should work as well.
+
+#### Configuring Bitcoin Core for testnet
+[Download](https://bitcoin.org/bin/bitcoin-core-0.13.1/) Bitcoin Core 0.13.1
+Create/edit your bitcoin.conf:
+```
+# ~/.bitcoin/bitcoin.conf
+# run on testnet
+testnet=1
+
+# server=1 tells Bitcoin-Qt and bitcoind to accept JSON-RPC commands
+server=1
+
+# Enable pruning to reduce storage requirements by deleting old blocks. 
+prune=2000
+
+rpcuser=bitcoinuser
+rpcpassword=bitcoinpassword
+```
+
+Place the file in the relevant directory based on your system:
+| OS | bitcoin.conf parent directory |
+| --- | --- |
+| Linux                   | /home/\<username\>/.bitcoin/                                     |
+| Mac OS                  | /Users/\<username\>/Library/Application Support/Bitcoin/         |
+| Windows Vista, 7, 8, 10 | C:\Users\\<username\>\AppData\Roaming\Bitcoin\                   |
+| Windows XP              | C:\Documents and Settings\\<username\>\Application Data\Bitcoin\ |
+
+Finally, boot up bitcoind or bitcoin-qt, let it sync with the network, and send it some coin.
+
+
 
 #### Installing .NET Core
 
