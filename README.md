@@ -251,6 +251,21 @@ The server requires Tor Hidden Services as part of the privacy protocol.  Downlo
 ```
 tor -controlport 9051 -cookieauthentication 1
 ```
+#### Configure & Run
+
+#####Notes before you start
+- Your wallet is only as secure as your configuration files, so apply appropriate permissions.
+- We are working on the testnet from here on.
+
+##### Server
+After installing .NET Core, launching stratisd on testnet, and restoring dependencies via `dotnet restore`...
+
+First run the server and the configuration will be generated for you.
+
+```
+cd Breeze.BreezeServer
+dotnet run -testnet
+```
 
 #### Configuring NTumbleBit to RPC bitcoind
 
@@ -285,20 +300,7 @@ rpc.user=bitcoinuser
 rpc.password=bitcoinpassword
 ```
 
-#### Configure & Run
 
-#####Notes before you start
-- Your wallet is only as secure as your configuration files, so apply appropriate permissions.
-- We are working on the testnet from here on.
-
-##### Server
-After installing .NET Core, launching stratisd on testnet, and restoring dependencies via `dotnet restore`...
-
-First run the server and the configuration will be generated for you.
-
-```
-cd Breeze.BreezeServer
-dotnet run -testnet
 ```
 
 ###### Key files from NTumbleBit
