@@ -299,6 +299,7 @@ tumbler.url=http://127.0.0.1:37123/api/v1/
 
 # reference the pubkey of the stratisd testnet wallet containing the registration tx fee
 # Get a list of your stratisd addresses with `stratisd listaddressgroupings`
+#or generate a 'receive' address if you are using stratisX
 tumbler.ecdsakeyaddress=<stratisd wallet address>
 ```
 
