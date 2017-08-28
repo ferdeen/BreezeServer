@@ -255,17 +255,55 @@ tor -controlport 9051 -cookieauthentication 1
 
 #####Notes before you start
 - Your wallet is only as secure as your configuration files, so apply appropriate permissions.
-- We are working on the testnet from here on.
+- This is pre-release alpha software. You should only be working testnet.
 
 ##### Server
-After installing .NET Core, launching stratisd on testnet, and restoring dependencies via `dotnet restore`...
-
-First run the server and the configuration will be generated for you.
+After installing .NET Core, launching stratisd or stratisqt on testnet.  Run the server and an empty configuration file will be generated for you.
 
 ```
 cd Breeze.BreezeServer
 dotnet run -testnet
 ```
+
+##### Configuring `breeze.conf`
+Now we're ready to set up `breeze.conf`. Edit the contents to look something like this.  The minimum config to get a working version is shown:
+
+```
+# ~/.breezeserver/breeze.conf
+# %AppData%\Roaming\breeze.conf
+
+# we must work on testnet for the alpha
+testnet=1
+
+#these settings are the RPC connection to your stratis wallet,
+#can be found in stratis.conf
+rpc.user=stratisuser
+rpc.password=stratispassword
+
+#use the default post 26174
+rpc.url=http://127.0.0.1:26174
+
+#breeze.ipv4=127.0.0.1
+#breeze.ipv6=2001:0db8:85a3:0000:0000:8a2e:0370:7334
+#breeze.onion=0123456789ABCDEF
+#breeze.port=37123
+
+# for testing purposes, feel free to change these values
+#breeze.regtxfeevalue=10000
+#breeze.regtxoutputvalue=1000
+
+tumbler.url=http://127.0.0.1:37123/api/v1/
+
+# reference the key file we just generated
+#tumbler.rsakeyfile=/home/dan/.breezeserver/Tumbler.pem
+
+# reference the pubkey of the stratisd testnet wallet containing the registration tx fee
+# Get a list of your stratisd addresses with `stratisd listaddressgroupings`
+tumbler.ecdsakeyaddress=<stratisd wallet address>
+```
+
+Run the server again with `dotnet run -testnet` within `<path-to-BreezeServer>/Breeze.BreezeServer`, and keep it running.
+
 
 #### Configuring NTumbleBit to RPC bitcoind
 
@@ -333,36 +371,6 @@ stratisd getnewaddress
 ```
 The output of this command is our `tumbler.ecdsakeyaddress` for our conf file.
 
-##### Configuring `breeze.conf`
-Now we're ready to set up `breeze.conf`. Edit the contents to look something like this:
-
-```
-# ~/.breezeserver/breeze.conf
-
-testnet=1
-rpc.user=stratisuser
-rpc.password=stratispassword
-rpc.url=http://127.0.0.1:26174
-breeze.ipv4=127.0.0.1
-#breeze.ipv6=2001:0db8:85a3:0000:0000:8a2e:0370:7334
-#breeze.onion=0123456789ABCDEF
-breeze.port=37123
-
-# for testing purposes, feel free to change these values
-breeze.regtxfeevalue=10000
-breeze.regtxoutputvalue=1000
-
-tumbler.url=http://127.0.0.1:37123/api/v1/
-
-# reference the key file we just generated
-tumbler.rsakeyfile=/home/dan/.breezeserver/Tumbler.pem
-
-# reference the pubkey of the stratisd testnet wallet containing the registration tx fee
-# Get a list of your stratisd addresses with `stratisd listaddressgroupings`
-tumbler.ecdsakeyaddress=<stratisd wallet address>
-```
-
-Run the server again with `dotnet run -testnet` within `<path-to-BreezeServer>/Breeze.BreezeServer`, and keep it running.
 
 ##### Client
 
