@@ -337,9 +337,6 @@ tor.cookiefile={path to your cookie file}
 tor.virtualport=80
 ```
 
-
-```
-
 BreezeServer's configuration file can be found in the user's home directory at `.breezeserver/breeze.conf` or `%appdata%\Breeze.BreezeServer\breeze.conf` on Windows.
 
 | OS | breeze.conf parent directory |
@@ -349,7 +346,7 @@ BreezeServer's configuration file can be found in the user's home directory at `
 | Windows Vista, 7, 8, 10 | C:\Users\\<username\>\AppData\Roaming\BreezeServer\                   |
 | Windows XP              | C:\Documents and Settings\\<username\>\Application Data\BreezeServer\ |
 
-```
+
 #### on ubuntu...
 ```
 cp ~/.ntumblebitserver/TestNet/Tumbler.pem ~/.breezeserver/
