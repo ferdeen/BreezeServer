@@ -350,7 +350,8 @@ BreezeServer's configuration file can be found in the user's home directory at `
 | Windows XP              | C:\Documents and Settings\\<username\>\Application Data\BreezeServer\ |
 
 ```
-# on ubuntu...
+#### on ubuntu...
+```
 cp ~/.ntumblebitserver/TestNet/Tumbler.pem ~/.breezeserver/
 ```
 
