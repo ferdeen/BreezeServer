@@ -246,9 +246,7 @@ Test execution time: 4.5518 Seconds
 
 ##### Setup Tor
 
-The server requires Tor Hidden Services as part of the privacy protocol.
-
-Download Tor here and run it with the following command.
+The server requires Tor Hidden Services as part of the privacy protocol.  Download Tor here and run it with the following command.
 
 ```
 tor -controlport 9051 -cookieauthentication 1
