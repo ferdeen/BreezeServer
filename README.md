@@ -256,7 +256,7 @@ tor -controlport 9051 -cookieauthentication 1
 ```
 #### Configure & Run
 
-#####Notes before you start
+##### Notes before you start
 - Your wallet is only as secure as your configuration files, so apply appropriate permissions.
 - This is pre-release alpha software. You should only be working testnet.
 
@@ -379,12 +379,3 @@ The output of this command is our `tumbler.ecdsakeyaddress` for our conf file.
 ##### Client
 
 After starting the server, the address of the tumbler will be printed to console. The client config key `tumbler.server` should be set to this address.
-
-At this stage the client is hosted  in [NTumbleBit](https://github.com/ntumblebit/ntumblebit)
-
-Breeze.BreezeClient is not implemented yet. Please view the [documentation](https://github.com/ntumblebit/ntumblebit/wiki/How-to-Run#the-client) for NTumbleBit Client
-
-###### The registration transaction
-
-###### FAQ
-Please read the [FAQ](https://github.com/BreezeHub/BreezeServer/wiki/FAQ) if you are struggling.
