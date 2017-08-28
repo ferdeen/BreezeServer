@@ -160,6 +160,9 @@ daemon=1
 rpcuser=stratisuser
 rpcpassword=stratispassword
 
+#accept json rpc commands
+server=1
+
 # Optional: pruning can reduce the disk usage
 prune=2000
 ```
