@@ -63,7 +63,7 @@ More information about installing .NET Core on your system can be found [here](h
 
 Packages for Windows and Mac OS X can be found [here](https://github.com/stratisproject/stratisX/releases/tag/v2.0.0.3).
 
-Run the installed *stratisqt* in testnet mode and wlet it sync the testnet blockchain transaction.
+Run the installed *stratisqt* in testnet mode and let it sync the testnet blockchain transaction.
 
 ```
 stratisqt -testnet
@@ -91,6 +91,9 @@ daemon=1
 # RPC user and password. We don't yet support cookie authentication
 rpcuser=stratisuser
 rpcpassword=stratispassword
+
+#accept json rpc commands
+server=1
 
 # Optional: pruning can reduce the disk usage
 prune=2000
@@ -311,21 +314,8 @@ Run the server again with `dotnet run -testnet` within `<path-to-BreezeServer>/B
 
 #### Configuring NTumbleBit to RPC bitcoind
 
-###### Key files from NTumbleBit
-Our codebase does not yet generate the identifying `Tumbler.pem` rsa key. To get this key, one must clone the NTumbleBit repository
-
-```
-git clone git@github.com:NTumbleBit/NTumbleBit.git
-```
-and run the NTumbleBit server to generate `Tumbler.pem`, we'll need this later:
-```
-cd NTumbleBit/NTumbleBit.ClassicTumbler.Server.CLI
-dotnet restore
-dotnet run -testnet
-```
-
 ###### Configuration file
-After running NTumbleBit, a configuration directory will be created. This is where `Tumbler.pem` will be.
+After running the server and getting a successful tumbler registration, a configuration directory will be created. You will find a default server.conf file has been generated:
 
 | OS | NTumbleBit/TestNet/ config parent directory |
 | --- | --- |
@@ -334,20 +324,21 @@ After running NTumbleBit, a configuration directory will be created. This is whe
 | Windows Vista, 7, 8, 10 | C:\Users\\<username\>\.ntumblebitserver\       |
 | Windows XP              | C:\Documents and Settings\\<username\>\Application Data\.ntumblebitserver\ |
 
-edit the `server.conf` file within the `TestNet` directory to configure RPC with bitcoind
+edit the `server.conf` file within the `TestNet` directory to configure RPC with bitcoind and also add your tor settings.
 ```
 # ~/.ntumblebitserver/TestNet/server.conf
 rpc.url=http://127.0.0.1:18332/
 rpc.user=bitcoinuser
 rpc.password=bitcoinpassword
+
+tor.enabled=true
+tor.server=127.0.0.1:9051
+tor.cookiefile={path to your cookie file}
+tor.virtualport=80
 ```
 
 
 ```
-
-###### Key files from NTumbleBit
-Our codebase does not yet generate the identifying `Tumbler.pem` rsa key. Copy this key from the NTumbleBit config folder referenced earlier.
-The RSA key file `Tumbler.pem` should be located in the NTumbleBitServer data directory. It will be in `~/.ntumblebitserver/TestNet/Tumbler.pem` on ubuntu. Look at the table in the NTumbleBit section above if you can't find it on your system. Copy this file into the same directory as `breeze.conf`
 
 BreezeServer's configuration file can be found in the user's home directory at `.breezeserver/breeze.conf` or `%appdata%\Breeze.BreezeServer\breeze.conf` on Windows.
 
@@ -378,4 +369,4 @@ The output of this command is our `tumbler.ecdsakeyaddress` for our conf file.
 
 ##### Client
 
-After starting the server, the address of the tumbler will be printed to console. The client config key `tumbler.server` should be set to this address.
+After starting the server, the address of the tumbler will be printed to console. This address can be copied for use in the client.
