@@ -13,7 +13,7 @@
 
 BreezeServer is a service host for our implementation of [TumbleBit](http://tumblebit.cash) in .NET Core. It is an trustless bitcoin-compatible anonymous payments protocol.
 
-## The BreezeServer Experimental Release
+## The BreezeServer Alpha Release
 This release includes the following:
 
 ###### Node Advertisment Protocol
