@@ -64,7 +64,7 @@ Packages for Windows and Mac OS X can be found [here](https://github.com/stratis
 Run the installed *stratisqt* in testnet mode and let it sync the testnet blockchain transaction.
 
 ```
-stratisqt -testnet
+stratis-qt -testnet
 ```
 
 This will create a folder on your computer named Stratis in the following location:
@@ -72,7 +72,8 @@ This will create a folder on your computer named Stratis in the following locati
 ```
 %AppData%\Roaming\Stratis
 ```
-Create a ```stratis.config``` file in this folder and set it up a follows:
+
+Close the software, create a ```stratis.conf``` file in this folder and set it up a follows:
 
 ```
 # ~/.stratis/stratis.conf
@@ -96,13 +97,13 @@ server=1
 # Optional: pruning can reduce the disk usage
 prune=2000
 ```
-Run again stratisqt - you now have a sync'd and setup wallet.  You can send it some testcoins.
+Run again. This time you need not specify explicitly the testnet flag, because you already set it in the config. You can send it some testcoins.
 
 ##### Linux
 
 On linux we currently recommend you install and run stratisd v2.0.0.3.
 
-##### Step 1: Create a user for running stratisd (optional)
+###### Step 1: Create a user for running stratisd (optional)
 This step is optional, but for better security and resource separation we suggest you create a separate user just for running stratisd. We will also use the ~/bin directory to keep locally installed files (others might want to use /usr/local/bin instead). We will download source code files to the ~/src directory. (Example here is for linux and was tested on Ubuntu).
 
 Enter the following at your terminal:
@@ -123,7 +124,7 @@ Leave the stratis user at your shell:
 exit
 ```
 
-##### Step 2: Download StratisD
+###### Step 2: Download StratisD
 
 Here are some pointers for ubuntu:
 ```
@@ -137,7 +138,7 @@ make -f makefile.unix # This will error if you don't have all dependencies liste
 cp -a stratisd ~/bin   
 ```
 
-##### Step 3: Configure & run StratisD on testnet
+###### Step 3: Configure & run StratisD on testnet
 
 Create/edit your stratis.conf:
 ```
@@ -186,7 +187,9 @@ stratisd getinfo
 ```
 
 #### Configuring Bitcoin Core for testnet
-[Download](https://bitcoin.org/bin/bitcoin-core-0.13.1/) Bitcoin Core 0.13.1
+
+[Download](https://bitcoin.org/en/bitcoin-core/) Bitcoin Core.
+
 Create/edit your bitcoin.conf:
 ```
 # ~/.bitcoin/bitcoin.conf
