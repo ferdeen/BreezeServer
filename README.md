@@ -11,9 +11,7 @@
 
 # BreezeServer
 
-BreezeServer is a service host for our implementation of [TumbleBit](http://tumblebit.cash) in .NET Core. It is an untrusted<sup>*</sup> bitcoin-compatible anonymous payments protocol.
-
-<sup>*</sup>Here *untrusted*, is used in a cryptographic context to indicate that the TumbleBit protocol does not require trust to perform its function.
+BreezeServer is a service host for our implementation of [TumbleBit](http://tumblebit.cash) in .NET Core. It is an trustless bitcoin-compatible anonymous payments protocol.
 
 ## The BreezeServer Experimental Release
 This release includes the following:
@@ -24,7 +22,7 @@ This release includes the following:
   1. The node operator starts up the BreezeServer software.
   2. The node checks to see if it has already registered itself on the Stratis blockchain.
   3. If it has registered, the tumbler service is initialized as normal.
-  4. If the node has not yet registered, or if its configuration has changed, the registration transaction updates and is broadcast again.
+  4. If the node has not yet registered, or if its configuration has changed, the registration transaction updates and it broadcasts again.
   5. Once registered the service is ready for connections from BreezeClients such as BreezeWallet.
 
 ###### Registration Transaction
